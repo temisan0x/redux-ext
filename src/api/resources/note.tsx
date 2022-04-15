@@ -1,10 +1,11 @@
 import { v4 as uuid } from 'uuid'
 import { CategoryId, later } from '../index';
+import { Category } from './categories';
 
-type NoteId = string;
-type NoteTitle = string;
-type NoteContent = string;
-type NoteCompleted = boolean;
+export type NoteId = string;
+export type NoteTitle = string;
+export type NoteContent = string;
+export type NoteCompleted = boolean;
 export enum NotePriorityEnum {
     LOW = 'Low',
     MEDIUM = 'Meduim',
@@ -12,7 +13,7 @@ export enum NotePriorityEnum {
 }; //enumeration 
 
 //passed note types to the note interface
-interface Note {
+export interface Note {
     id: NoteId;
     title: NoteTitle;
     content: NoteContent;
@@ -22,7 +23,7 @@ interface Note {
 }
 
 //creating note reusable props
-interface NoteCreationProps {
+export interface NoteCreationProps {
     title: NoteTitle;
     content: NoteContent;
     priority: NotePriorityEnum;
@@ -30,19 +31,19 @@ interface NoteCreationProps {
 }
 
 // type for edit notes 
-type NoteEditableProps = Partial<NoteCreationProps> & { completed: NoteCompleted };
+export type NoteEditableProps = Partial<NoteCreationProps> & { completed: NoteCompleted };
 
-//created a child entitiies ~ importing categoryId
-type NoteWithChildEntities = Note & { categories: CategoryId[] };
+//created a child entitiies ~ importing category[]: comprising of the id & content
+export type NoteWithChildEntities = Note & { categories: Category[] };
 
 //fetch the notes data from the note interface
-async function fetchNote(ids?:NoteId[]):Promise<Note[]> {
+export async function fetchNote(ids?:NoteId[]):Promise<Note[]> {
     await later(200);
     return []; //here we add an empty array
 }
 
 //add notes to the new id
-async function addNote(id:NoteCreationProps):Promise<NoteId> {
+export async function addNote(id:NoteCreationProps):Promise<NoteId> {
     await later(200);
     return uuid();
 }
