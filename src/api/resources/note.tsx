@@ -14,7 +14,7 @@ export enum NotePriorityEnum {
 
 interface Note {
     id: NoteId;
-    tile: NoteTitle;
+    title: NoteTitle;
     content: NoteContent;
     completed: NoteCompleted;
     priority: NotePriorityEnum;
@@ -23,6 +23,7 @@ interface Note {
 
 //creating note reusable props
 interface NoteCreationProps {
+    title: NoteTitle;
     content: NoteContent;
     priority: NotePriorityEnum;
     categoryIds?: CategoryId[]
@@ -31,6 +32,7 @@ interface NoteCreationProps {
 // type for edit notes 
 type NoteEditableProps = Partial<NoteCreationProps> & { completed: NoteCompleted };
 
+//created a child entitiies ~ importing categoryId
 type NoteWithChildEntities = Note & { categories: CategoryId[] };
 
 //fetch the notes data from the note interface
@@ -49,7 +51,6 @@ async function addNote(id:NoteCreationProps):Promise<NoteId> {
 async function editNote(id: NoteId, changes:NoteEditableProps):Promise<void> {
     await later(200);
 }
-
 
 //delete note from the id
 async function deleteNote(id: NoteId):Promise<void>{
