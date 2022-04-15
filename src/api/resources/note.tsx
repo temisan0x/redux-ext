@@ -40,24 +40,23 @@ async function fetchNote(ids?:NoteId[]):Promise<Note[]> {
 }
 
 //add notes to the new id
-async function addNote(ids?:NoteCreationProps):Promise<NoteId> {
+async function addNote(id:NoteCreationProps):Promise<NoteId> {
     await later(200);
     return uuid();
 }
 
-//edit notes from the id
-async function editNote(ids?:NoteEditableProps):Promise<void> {
+//edit has two parameters, id  & changes
+async function editNote(id: NoteId, changes:NoteEditableProps):Promise<void> {
     await later(200);
 }
-console.log(editNote);
 
 
 //delete note from the id
-async function deleteNote(ids?: NoteId):Promise<void>{
+async function deleteNote(id: NoteId):Promise<void>{
     await later(200);
 }
 
 //toggle ~ complete or uncomplete
-async function toggleNote(ids?:NoteId):Promise<void> {
+async function toggleNote(id?:NoteId):Promise<void> {
     await later(200)
 }
