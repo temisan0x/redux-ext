@@ -11,7 +11,7 @@ export enum NotePriorityEnum {
     HIGH = 'High'
 }; //enumeration 
 
-
+//passed note types to the note interface
 interface Note {
     id: NoteId;
     title: NoteTitle;
