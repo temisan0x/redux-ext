@@ -37,28 +37,28 @@ export type NoteEditableProps = Partial<NoteCreationProps> & { completed: NoteCo
 export type NoteWithChildEntities = Note & { categories: Category[] };
 
 //fetch the notes data from the note interface
-export async function fetchNote(ids?:NoteId[]):Promise<Note[]> {
+export async function fetchNotes(ids?: NoteId[]): Promise<Note[]> {
     await later(200);
     return []; //here we add an empty array
 }
 
 //add notes to the new id
-export async function addNote(id:NoteCreationProps):Promise<NoteId> {
+export async function addNote(id: NoteCreationProps): Promise<NoteId> {
     await later(200);
     return uuid();
 }
 
 //edit has two parameters, id  & changes
-async function editNote(id: NoteId, changes:NoteEditableProps):Promise<void> {
+export async function editNote(id: NoteId, changes: NoteEditableProps): Promise<void> {
     await later(200);
 }
 
 //delete note from the id
-async function deleteNote(id: NoteId):Promise<void>{
+export async function deleteNote(id: NoteId): Promise<void> {
     await later(200);
 }
 
 //toggle ~ complete or uncomplete
-async function toggleNote(id?:NoteId):Promise<void> {
+export async function toggleNote(id?: NoteId): Promise<void> {
     await later(200)
 }

@@ -1,10 +1,10 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 import { Category } from "../../api";
 
-const categoriesAdapter = createEntityAdapter<Category>()
+const categoriesAdapter = createEntityAdapter<Category>();
 
 const slice = createSlice({
-    name: "category",
+    name: "categories",
     initialState: categoriesAdapter.getInitialState(),
     reducers: {
         addCategory: categoriesAdapter.addOne,

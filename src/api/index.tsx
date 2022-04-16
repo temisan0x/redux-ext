@@ -3,4 +3,5 @@ export const later = (ms: number): Promise<void> => {
 }
 
 export * from './resources/categories';
-export * from './resources/note'
+export * from './resources/notes'
+

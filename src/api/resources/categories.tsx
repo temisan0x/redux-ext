@@ -16,7 +16,7 @@ export interface CategoryContentProps {
 
 export type CategoryEditableProps = Partial<CategoryContentProps>; //pass content to editable
 
-export async function fetchCategory(ids?: CategoryId[]):
+export async function fetchCategories(ids?: CategoryId[]):
     Promise<Category[]> {
     await later(200);
     const DEFAULT_CATEGORIES: Category[] = [

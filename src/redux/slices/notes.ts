@@ -9,7 +9,7 @@ const slice = createSlice({
     initialState: notesAdapter.getInitialState(),
     reducers: {
         addNote: notesAdapter.addOne,
-        removeNote: notesAdapter.removeOne,
+        deleteNote: notesAdapter.removeOne,
         updateNote: notesAdapter.updateOne,
         //payloadAction will combine the type and associated payload which is the categoryid
         //here, we will recreate a reducer that checks if our note is completed or not.
@@ -18,10 +18,15 @@ const slice = createSlice({
             const note = state.entities[id];
 
             if (note) {
-                notesAdapter.updateOne(state, {id, changes : {completed: !note.completed}})
+                notesAdapter.updateOne(
+                    state,
+                    {
+                        id,
+                        changes: { completed: !note.completed }
+                    })
             }
         },
-        setNote: notesAdapter.setAll,
+        setNotes: notesAdapter.setAll,
     }
 })
 
