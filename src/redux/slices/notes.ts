@@ -15,9 +15,11 @@ const {reducer, actions, name} = createSlice({
         //here, we will recreate a reducer that checks if our note is completed or not.
         toggleNote: (state, action: PayloadAction<CategoryId>): void => {
             const id = action.payload;
-            const note = state.entities[id];//pasered Id to the state entity
+            const note = state.entities[id];//pasered Id to the state entities
 
             if (note) {
+                //grabs the id & changes in updateCategory.
+                //which is then passed to the note
                 notesAdapter.updateOne(
                     state,{id, changes: { completed: !note.completed }})
             }
