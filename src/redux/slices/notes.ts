@@ -2,6 +2,9 @@ import {createSlice, createEntityAdapter, PayloadAction} from '@reduxjs/toolkit'
 import { CategoryId, Note } from '../../api';
 
 //Passed createEntityAdapter to the notesAdapter
+//we also passed the Note interface which includes
+//export interface Note id, title, content, completed, priority, CategoryIds
+
 const notesAdapter = createEntityAdapter<Note>();
 
 const {reducer, actions, name} = createSlice({
