@@ -5,6 +5,8 @@ import { later } from '..';
 export type CategoryId = string;
 export type CategoryContent = string;
 
+//interface defines the syntax to follow,
+
 export interface Category {
     id: CategoryId;
     content: CategoryContent;

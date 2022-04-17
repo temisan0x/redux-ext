@@ -29,6 +29,7 @@ const Todos: React.FC = () => {
         }
     }
 
+    const [isToggleNoteLoading, setIsToggleNoteLoading] = useState<boolean>(false)
 
     return (
         <div>Todos:</div>
